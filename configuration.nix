@@ -13,7 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   nix.settings.experimental-features = [ "nix-command" "flakes"]; 
@@ -85,18 +85,11 @@
     isNormalUser = true;
     description = "Alexandre Duarte";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-	vscode
-	discord
-	ansible
-	nextcloud-client
-	spotify
-    ];
   };
 
   # Install firefox.
   programs.firefox.enable = true;
-
+  programs.steam.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -105,8 +98,7 @@
   environment.systemPackages = with pkgs; [
   	neovim
   	wget
-	git
-	wireguard-tools
+	  wireguard-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
