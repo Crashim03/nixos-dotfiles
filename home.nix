@@ -26,6 +26,7 @@
     dconf-editor
     kitty
     libreoffice
+    chromium
   ];
 
   programs.zsh = {
@@ -81,9 +82,15 @@
   };
 
   dconf.settings = {
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-right = ["<Super>Right" "<Super>KP_Right"];
+      toggle-tiled-left = ["<Super>Left" "<Super>KP_Left"];
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Super>Q"];
       minimize = ["<Super>N"];
+      maximize = ["<Super>Up" "<Super>KP_Up"];
 
       switch-to-workspace-left = ["<Super><Ctrl>Left" "<Super><Ctrl>KP_Left"];
       switch-to-workspace-right = ["<Super><Ctrl>Right" "<Super><Ctrl>KP_Right"];
