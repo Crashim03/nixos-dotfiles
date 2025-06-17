@@ -54,8 +54,7 @@
   dconf.settings = {
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Super>Q"];
-      maximize = ["<Super>M"];
-      unmaximize = ["<Super>N"];
+      minimize = ["<Super>N"];
 
       switch-to-workspace-left = ["<Super><Ctrl>Left" "<Super><Ctrl>KP_Left"];
       switch-to-workspace-right = ["<Super><Ctrl>Right" "<Super><Ctrl>KP_Right"];
