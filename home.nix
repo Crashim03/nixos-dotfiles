@@ -25,6 +25,7 @@
     zsh
     dconf-editor
     kitty
+    libreoffice
   ];
 
   programs.zsh = {
@@ -43,6 +44,34 @@
       theme = "agnoster";
       plugins = [ "git" "z" "sudo" ];
     };
+  };
+
+  programs.kitty = {
+    enable = true;
+    extraConfig = ''
+      background #212733
+      foreground #d9d7ce
+      cursor     #ffcc66
+      selection_background #343f4c
+      selection_foreground #212733
+
+      color0  #191e2a
+      color8  #686868
+      color1  #ed8274
+      color9  #f28779
+      color2  #a6cc70
+      color10 #bae67e
+      color3  #fad07b
+      color11 #ffd580
+      color4  #6dcbfa
+      color12 #73d0ff
+      color5  #cfbafa
+      color13 #d4bfff
+      color6  #90e1c6
+      color14 #95e6cb
+      color7  #c7c7c7
+      color15 #ffffff
+    '';
   };
 
   programs.git = {
