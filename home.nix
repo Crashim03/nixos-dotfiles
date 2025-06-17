@@ -37,6 +37,12 @@
       ll = "ls -la";
       gs = "git status";
     };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "agnoster";
+      plugins = [ "git" "z" "sudo" ];
+    };
   };
 
   programs.git = {
@@ -61,10 +67,10 @@
       move-to-workspace-left = ["<Super><Shift>Left" "<Super><Shift>KP_Left"];
       move-to-workspace-right = ["<Super><Shift>Right" "<Super><Shift>KP_Right"];
 
-      move-to-monitor-right = [];
-      move-to-monitor-left = [];
-      move-to-monitor-up = [];
-      move-to-monitor-down = [];
+      move-to-monitor-right = ["<Super><Alt>Right" "<Super><Alt>KP_Right"];
+      move-to-monitor-left = ["<Super><Alt>Left" "<Super><Alt>KP_Left"];
+      move-to-monitor-up = ["<Super><Alt>Up" "<Super><Alt>KP_Up"];
+      move-to-monitor-down = ["<Super><Alt>Down" "<Super><Alt>KP_Down"];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -107,10 +113,6 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
-
-  home.sessionVariables = {
-    # EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.

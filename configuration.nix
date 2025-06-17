@@ -80,10 +80,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
     isNormalUser = true;
     description = "Alexandre Duarte";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -99,6 +102,8 @@
   	neovim
   	wget
 	  wireguard-tools
+	  docker
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
