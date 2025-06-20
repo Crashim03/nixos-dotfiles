@@ -23,8 +23,7 @@
     autosuggestion.enable = true;
 
     shellAliases = {
-      ll = "ls -la";
-      gs = "git status";
+      cd = "z";
     };
 
     oh-my-zsh = {
@@ -37,6 +36,8 @@
   home.packages = with pkgs; [
     ansible
     zsh
+    fzf
+    zoxide
   ];
 
   programs.git = {
