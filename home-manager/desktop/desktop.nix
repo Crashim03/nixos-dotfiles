@@ -4,7 +4,6 @@
     imports = [
       ./kitty.nix
       ./keyboard.nix
-      ./zsh.nix
     ];
 
     home.packages = with pkgs; [
@@ -18,6 +17,6 @@
         kitty
         libreoffice
         chromium
-	qownnotes
+	      qownnotes
     ];
 }
