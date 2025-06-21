@@ -16,6 +16,9 @@
   home.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
 
+  nix.package = pkgs.nix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
