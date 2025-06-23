@@ -7,8 +7,10 @@
 
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Super>Q"];
-      minimize = ["<Super>N"];
-      maximize = ["<Super>Up" "<Super>KP_Up"];
+      minimize = ["<Super>Down" "<Super>KP_Down" ];
+      toggle-maximized = ["<Super>Up" "<Super>KP_Up"];
+      maximize = [];
+      begin-resize = ["<Super>Return" ];
 
       switch-to-workspace-left = ["<Super><Ctrl>Left" "<Super><Ctrl>KP_Left"];
       switch-to-workspace-right = ["<Super><Ctrl>Right" "<Super><Ctrl>KP_Right"];

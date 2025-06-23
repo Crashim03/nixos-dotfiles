@@ -8,6 +8,21 @@
       selection_background #343f4c
       selection_foreground #212733
       background_opacity 0.80
+      enabled_layouts splits
+
+      map ctrl+shift+return launch --location=split
+
+      map alt+left neighboring_window left
+      map alt+kp_left neighboring_window left
+
+      map alt+right neighboring_window right
+      map alt+kp_right neighboring_window right
+
+      map alt+up neighboring_window up
+      map alt+kp_up neighboring_window up
+
+      map alt+down neighboring_window down
+      map alt+kp_down neighboring_window down
 
       color0  #191e2a
       color8  #686868

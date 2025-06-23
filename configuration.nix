@@ -14,7 +14,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  system.autoUpgrade.enable  = true;
   services.resolved.enable = true;
 
   swapDevices = [
