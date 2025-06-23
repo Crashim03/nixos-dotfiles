@@ -7,27 +7,25 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-      homeConfig = import ./terminal.nix {
+      homeConfig = import /home/alex/.config/home-manager/terminal/terminal.nix {
       	pkgs = pkgs;
-	config = {};
+	      config = {};
       };
 
     in {
       homeConfiguration.alex = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	configuration = homeConfig;
+	      configuration = homeConfig;
       };
       devShells.x86_64-linux.default = pkgs.mkShell {
         buildInputs = with pkgs; [
           nodejs
-	  go
-	  mongodb
+          go
+          mongodb
         ];
 
-        shell = "${pkgs.zsh}/bin/zsh";
-
         shellHook = ''
-	  exec echo "Entered development"
+          echo "ENTERED DEVELOPMENT ZONE"
         '';
       };
     };
