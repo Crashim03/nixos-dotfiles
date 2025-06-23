@@ -1,0 +1,35 @@
+{
+  description = "Example flake with a devShell";
+
+  inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
+  outputs = { self, nixpkgs, home-manager }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      homeConfig = import ./terminal.nix {
+      	pkgs = pkgs;
+	config = {};
+      };
+
+    in {
+      homeConfiguration.alex = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+	configuration = homeConfig;
+      };
+      devShells.x86_64-linux.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          nodejs
+	  go
+	  mongodb
+        ];
+
+        shell = "${pkgs.zsh}/bin/zsh";
+
+        shellHook = ''
+	  exec echo "Entered development"
+        '';
+      };
+    };
+}
+
