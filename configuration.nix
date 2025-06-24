@@ -15,16 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   system.autoUpgrade.enable  = true;
-  services.resolved.enable = true;
-
-  swapDevices = [
-    { device = "/dev/nvme0n1p3"; }
-  ];
-
-  boot.kernelParams = [
-    "resume=/dev/nvme0n1p3"
-  ];
-  
+  services.resolved.enable = true;  
  
   networking.hostName = "alex-pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
