@@ -10,7 +10,11 @@
       ./hardware-configuration.nix
       ./graphical-card.nix
     ];
-
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -102,10 +106,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  	neovim
-  	wget
-	  wireguard-tools
-	  docker
+    neovim
+    wget
+    wireguard-tools
+    docker
     zsh
     lshw
     direnv
@@ -139,5 +143,12 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
+
+  services.udev.extraRules = ''
+    KERNEL=="video*", GROUP="video", MODE="0660"
+    '';
 
 }
