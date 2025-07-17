@@ -30,7 +30,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
   # Set your time zone.
   time.timeZone = "Europe/Lisbon";
 
@@ -106,6 +106,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.hibernate-status-button
     neovim
     wget
     wireguard-tools
@@ -115,6 +116,9 @@
     direnv
   ];
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "alex" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
   programs.direnv.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -150,5 +154,5 @@
   services.udev.extraRules = ''
     KERNEL=="video*", GROUP="video", MODE="0660"
     '';
-
+  nix.settings.trusted-users = [ "root" "alex" ];
 }

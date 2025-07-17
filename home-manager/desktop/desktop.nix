@@ -1,13 +1,20 @@
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixpkgs-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
+in
 {
+
     imports = [
       ./kitty.nix
       ./keyboard.nix
     ];
 
     home.packages = with pkgs; [
-        vscode
+        unstable.vscode
         discord
         nextcloud-client
         spotify
@@ -16,7 +23,7 @@
         kitty
         libreoffice
         chromium
-        qownnotes
+        unstable.qownnotes
 	stremio
 	droidcam
     ];

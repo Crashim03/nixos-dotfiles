@@ -1,6 +1,12 @@
 
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixpkgs-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
+in
 {
   imports = [
     ./zsh.nix
@@ -41,6 +47,9 @@
     zsh
     fzf
     zoxide
+    unzip
+    p7zip
+    unstable.devenv
   ];
 
   programs.git = {
