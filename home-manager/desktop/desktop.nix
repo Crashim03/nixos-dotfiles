@@ -24,8 +24,9 @@ in
         libreoffice
         chromium
         unstable.qownnotes
-	stremio
-	droidcam
+        unstable.joplin-desktop
+        stremio
+	      droidcam
     ];
 
     programs.obs-studio = {
