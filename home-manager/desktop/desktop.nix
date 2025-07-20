@@ -22,8 +22,6 @@ in
         dconf-editor
         kitty
         libreoffice
-        chromium
-        unstable.qownnotes
         unstable.joplin-desktop
         stremio
 	      droidcam

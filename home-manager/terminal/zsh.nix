@@ -6,8 +6,7 @@
     autosuggestion.enable = true;
 
     shellAliases = {
-      ll = "ls -la";
-      gs = "git status";
+      update = "sudo nix-channel --update";
     };
 
     oh-my-zsh = {

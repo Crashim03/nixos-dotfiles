@@ -22,6 +22,10 @@
   services.resolved.enable = true;  
  
   networking.hostName = "alex-pc"; # Define your hostname.
+  networking.firewall.allowedTCPPortRanges = [
+    { from = 8000; to = 9000; }
+  ];
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   nix.settings.experimental-features = [ "nix-command" "flakes"]; 
   # Configure network proxy if necessary
