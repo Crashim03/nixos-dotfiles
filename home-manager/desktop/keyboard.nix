@@ -44,7 +44,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/browser" = {
       name = "Launch Browser";
-      command = "firefox";
+      command = "zen";
       binding = "<Super>b";
     };
 
