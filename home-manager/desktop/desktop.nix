@@ -24,7 +24,7 @@ in
         libreoffice
         unstable.joplin-desktop
         stremio
-	      droidcam
+        droidcam
     ];
 
     programs.obs-studio = {

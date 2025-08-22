@@ -50,6 +50,7 @@ in
     unzip
     p7zip
     unstable.devenv
+    nmap
   ];
 
   programs.git = {

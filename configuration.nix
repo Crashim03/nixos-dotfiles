@@ -3,7 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  zenBrowser = import (builtins.fetchTarball {
+    url = "https://github.com/youwen5/zen-browser-flake/archive/master.tar.gz";
+  }) { inherit pkgs; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -101,8 +105,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker"];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
   programs.steam.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -118,10 +120,10 @@
     zsh
     lshw
     direnv
+    zenBrowser.default
   ];
 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "alex" ];
   virtualisation.virtualbox.host.enableExtensionPack = true;
   programs.direnv.enable = true;
 
