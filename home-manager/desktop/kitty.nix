@@ -13,9 +13,13 @@
       map ctrl+shift+return launch --location=split
 
       map alt+left neighboring_window left
+      map alt+kp_left neighboring_window left
       map alt+right neighboring_window right
+      map alt+kp_right neighboring_window right
       map alt+up neighboring_window up
+      map alt+kp_up neighboring_window up
       map alt+down neighboring_window down
+      map alt+kp_down neighboring_window down
 
       # Scroll lines: both arrow and keypad arrow keys
       map ctrl+shift+up scroll_line_up
