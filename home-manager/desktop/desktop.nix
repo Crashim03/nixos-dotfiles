@@ -23,7 +23,6 @@ in
         kitty
         libreoffice
         unstable.joplin-desktop
-        stremio
         droidcam
     ];
 

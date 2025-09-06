@@ -31,10 +31,6 @@ in
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
 
-    shellAliases = {
-      cd = "z";
-    };
-
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
